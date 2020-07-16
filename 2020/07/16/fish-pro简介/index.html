@@ -22,28 +22,35 @@
     var CONFIG = {"hostname":"github.com","root":"/blogs/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AE">
-<meta property="og:url" content="https://github.com/ND-EdTech-Team/blogs/index.html">
+  <meta name="description" content="fish pro 是什么fish pro 是一套基于 react 的 通用后台管理最佳实践，为工程院提供一套管理后台快速开发能力，可以通过：http:&#x2F;&#x2F;fish-design-pro-test.k8s.sdp.nd&#x2F; 进行预览。  能力 1、快速创建后台项目的能力通过 toolkit 命令行（@gem-mine&#x2F;cli）直接创建，未来还可以通过可视化界面进行。依托于 toolkit 还能够进行项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fish-pro简介">
+<meta property="og:url" content="https://github.com/ND-EdTech-Team/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="AE">
+<meta property="og:description" content="fish pro 是什么fish pro 是一套基于 react 的 通用后台管理最佳实践，为工程院提供一套管理后台快速开发能力，可以通过：http:&#x2F;&#x2F;fish-design-pro-test.k8s.sdp.nd&#x2F; 进行预览。  能力 1、快速创建后台项目的能力通过 toolkit 命令行（@gem-mine&#x2F;cli）直接创建，未来还可以通过可视化界面进行。依托于 toolkit 还能够进行项">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/85699/1561702419785-e1a2b3a5-756e-4ac5-9399-98361ef35997.png#align=left&display=inline&height=834&name=image.png&originHeight=1668&originWidth=2872&size=394994&status=done&style=none&width=1436">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/85699/1561702630343-0f83a10e-3fe5-446b-8827-6c9fdb4b375f.png#align=left&display=inline&height=795&name=image.png&originHeight=1590&originWidth=2876&size=378880&status=done&style=none&width=1438">
+<meta property="article:published_time" content="2020-07-16T11:56:11.000Z">
+<meta property="article:modified_time" content="2020-07-16T11:56:16.606Z">
 <meta property="article:author" content="ND">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/85699/1561702419785-e1a2b3a5-756e-4ac5-9399-98361ef35997.png#align=left&display=inline&height=834&name=image.png&originHeight=1668&originWidth=2872&size=394994&status=done&style=none&width=1436">
 
-<link rel="canonical" href="https://github.com/ND-EdTech-Team/blogs/">
+<link rel="canonical" href="https://github.com/ND-EdTech-Team/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>AE</title>
+  <title>fish-pro简介 | AE</title>
   
 
 
@@ -134,7 +141,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,6 +153,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fish-pro-是什么"><span class="nav-number">1.</span> <span class="nav-text">fish pro 是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#能力"><span class="nav-number">1.1.</span> <span class="nav-text">能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、快速创建后台项目的能力"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、快速创建后台项目的能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、成熟、高效的项目构建能力"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、成熟、高效的项目构建能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、健壮的-react-基础能力"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、健壮的 react 基础能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、方便、实用的工具库、UI-库"><span class="nav-number">1.1.4.</span> <span class="nav-text">4、方便、实用的工具库、UI 库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、提供后台通用能力"><span class="nav-number">1.1.5.</span> <span class="nav-text">5、提供后台通用能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、满足个性化需求"><span class="nav-number">1.1.6.</span> <span class="nav-text">6、满足个性化需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、符合工程院-UE-设计规范"><span class="nav-number">1.1.7.</span> <span class="nav-text">7、符合工程院 UE 设计规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选型判断"><span class="nav-number">1.2.</span> <span class="nav-text">选型判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关截图"><span class="nav-number">1.3.</span> <span class="nav-text">相关截图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.4.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -189,9 +197,10 @@
       <div class="main-inner">
         
 
-        <div class="content index posts-expand">
+        <div class="content post posts-expand">
           
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -207,10 +216,9 @@
       <meta itemprop="name" content="AE">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">fish-pro简介</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          fish-pro简介
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -234,7 +242,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="fish-pro-是什么"><a href="#fish-pro-是什么" class="headerlink" title="fish pro 是什么"></a>fish pro 是什么</h1><p>fish pro 是一套基于 react 的 <strong>通用后台管理最佳实践</strong>，为工程院提供一套管理后台快速开发能力，可以通过：<a href="http://fish-design-pro-test.k8s.sdp.nd/#/demo/crud/modal" target="_blank" rel="noopener">http://fish-design-pro-test.k8s.sdp.nd/</a> 进行预览。</p>
+        <h1 id="fish-pro-是什么"><a href="#fish-pro-是什么" class="headerlink" title="fish pro 是什么"></a>fish pro 是什么</h1><p>fish pro 是一套基于 react 的 <strong>通用后台管理最佳实践</strong>，为工程院提供一套管理后台快速开发能力，可以通过：<a href="http://fish-design-pro-test.k8s.sdp.nd/#/demo/crud/modal" target="_blank" rel="noopener">http://fish-design-pro-test.k8s.sdp.nd/</a> 进行预览。</p>
 <p><a name="uJe4M"></a></p>
 <h2 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h2><p><a name="ArtqG"></a></p>
 <h3 id="1、快速创建后台项目的能力"><a href="#1、快速创建后台项目的能力" class="headerlink" title="1、快速创建后台项目的能力"></a>1、快速创建后台项目的能力</h3><p>通过 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 命令行（<a href="http://githoniel.gitee.io/toolkit-doc/#/zh-cn/api/gmc/readme" target="_blank" rel="noopener">@gem-mine/cli</a>）直接创建，未来还可以通过可视化界面进行。依托于 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 还能够进行项目的版本检测与自动化升级，也就是说 fish pro 在不断发展的同时，你会及时收到其什么时候发布了版本，更新的内容，并且可以自动化升级。</p>
@@ -279,80 +287,30 @@
 <h2 id="相关截图"><a href="#相关截图" class="headerlink" title="相关截图"></a>相关截图</h2><p>后台：<br /><img src="https://cdn.nlark.com/yuque/0/2019/png/85699/1561702419785-e1a2b3a5-756e-4ac5-9399-98361ef35997.png#align=left&display=inline&height=834&name=image.png&originHeight=1668&originWidth=2872&size=394994&status=done&style=none&width=1436" alt="image.png"></p>
 <p>接入聚合后台：<br /><img src="https://cdn.nlark.com/yuque/0/2019/png/85699/1561702630343-0f83a10e-3fe5-446b-8827-6c9fdb4b375f.png#align=left&display=inline&height=795&name=image.png&originHeight=1590&originWidth=2876&size=378880&status=done&style=none&width=1438" alt="image.png"><br><a name="EEKwz"></a></p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ND-EdTech-Team/blogs/2020/07/16/%E5%89%8D%E8%A8%80/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blogs/images/avatar.gif">
-      <meta itemprop="name" content="ND">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blogs/2020/07/16/%E5%89%8D%E8%A8%80/" class="post-title-link" itemprop="url">前言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-07-16 18:46:59 / 修改时间：18:52:21" itemprop="dateCreated datePublished" datetime="2020-07-16T18:46:59+08:00">2020-07-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>  网龙华渔教育开发者团队，致力于通过互联网技术探索教育的本源和未来趋势，以教育愿景为驱动力，立足于基础科学、创新性技术和应用技术。我们用强大的技术能力，构建开放的教育生态系统和专注于教育领域的网络社区。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blogs/2020/07/16/%E5%89%8D%E8%A8%80/" rel="prev" title="前言">
+      <i class="fa fa-chevron-left"></i> 前言
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 

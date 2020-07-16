@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>AE</title>
   
+  <subtitle>工程院技术博客</subtitle>
+  <link href="/blogs/atom.xml" rel="self"/>
   
-  <link href="/github.io/atom.xml" rel="self"/>
-  
-  <link href="https://github.com/ND-EdTech-Team/github.io/"/>
-  <updated>2020-07-16T10:52:21.853Z</updated>
-  <id>https://github.com/ND-EdTech-Team/github.io/</id>
+  <link href="https://github.com/ND-EdTech-Team/blogs/"/>
+  <updated>2020-07-16T11:56:16.606Z</updated>
+  <id>https://github.com/ND-EdTech-Team/blogs/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>ND</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://github.com/ND-EdTech-Team/github.io/2020/07/16/hello-world/"/>
-    <id>https://github.com/ND-EdTech-Team/github.io/2020/07/16/hello-world/</id>
-    <published>2020-07-16T10:52:21.852Z</published>
-    <updated>2020-07-16T10:52:21.853Z</updated>
+    <title>fish-pro简介</title>
+    <link href="https://github.com/ND-EdTech-Team/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/"/>
+    <id>https://github.com/ND-EdTech-Team/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/</id>
+    <published>2020-07-16T11:56:11.000Z</published>
+    <updated>2020-07-16T11:56:16.606Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="fish-pro-是什么"><a href="#fish-pro-是什么" class="headerlink" title="fish pro 是什么"></a>fish pro 是什么</h1><p>fish pro 是一套基于 react 的 <strong>通用后台管理最佳实践</strong>，为工程院提供一套管理后台快速开发能力，可以通过：<a href="http://fish-design-pro-test.k8s.sdp.nd/#/demo/crud/modal" target="_blank" rel="noopener">http://fish-design-pro-test.k8s.sdp.nd/</a> 进行预览。</p><p><a name="uJe4M"></a></p><h2 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h2><p><a name="ArtqG"></a></p><h3 id="1、快速创建后台项目的能力"><a href="#1、快速创建后台项目的能力" class="headerlink" title="1、快速创建后台项目的能力"></a>1、快速创建后台项目的能力</h3><p>通过 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 命令行（<a href="http://githoniel.gitee.io/toolkit-doc/#/zh-cn/api/gmc/readme" target="_blank" rel="noopener">@gem-mine/cli</a>）直接创建，未来还可以通过可视化界面进行。依托于 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 还能够进行项目的版本检测与自动化升级，也就是说 fish pro 在不断发展的同时，你会及时收到其什么时候发布了版本，更新的内容，并且可以自动化升级。</p><p><a name="A9PBZ"></a></p><h3 id="2、成熟、高效的项目构建能力"><a href="#2、成熟、高效的项目构建能力" class="headerlink" title="2、成熟、高效的项目构建能力"></a>2、成熟、高效的项目构建能力</h3><p>基于 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 的构建能力（<a href="http://githoniel.gitee.io/toolkit-doc/#/zh-cn/api/gms/readme" target="_blank" rel="noopener">@gem-mine/script</a>），当然还支持进行自定义处理。例如你可以添加 plugin、loader 以及任何你想自定义 webpack 的能力。</p><p><a name="aF8uG"></a></p><h3 id="3、健壮的-react-基础能力"><a href="#3、健壮的-react-基础能力" class="headerlink" title="3、健壮的 react 基础能力"></a>3、健壮的 react 基础能力</h3><p>集成了 react 中非常常用的两个能力</p><ul><li>数据流管理（<a href="https://www.yuque.com/gem-mine/util/durex-overview" target="_blank" rel="noopener">@gem-mine/durex</a>），基于redux 但比 redux 好用太多</li><li>路由管理（<a href="https://www.yuque.com/gem-mine/util/router-overview" target="_blank" rel="noopener">@gem-mine/durex-router</a>），配置型路由管理，包括了权限配置、路由拆包按需等能力</li></ul><p><a name="aTztv"></a></p><h3 id="4、方便、实用的工具库、UI-库"><a href="#4、方便、实用的工具库、UI-库" class="headerlink" title="4、方便、实用的工具库、UI 库"></a>4、方便、实用的工具库、UI 库</h3><ul><li>请求库（<a href="https://www.yuque.com/gem-mine/util/request-overview" target="_blank" rel="noopener">@gem-mine/request</a>），支持多域、多环境请求能力，通过切面定制通用异常、loading 处理。同时 fish pro 在此基础上适配 WAF 跨域能力</li><li>不可变数据（<a href="https://www.yuque.com/gem-mine/util/immutable-overview" target="_blank" rel="noopener">@gem-mine/immutable</a>），小而可爱的 immutable 工具，提升性能的同时也提升了编码体验</li><li>国际化能力（<a href="https://www.yuque.com/gem-mine/util/intl-overview" target="_blank" rel="noopener">@gem-mine/intl</a>），简单有效的多语言能力，支持本地、远程模式</li><li>工程院 SDK 集合（<a href="https://www.yuque.com/gem-mine/util/one-overview" target="_blank" rel="noopener">@sdp.nd/one</a>），包装好了 one，可以快速接入工程院的 uc、oms、rbac 等能力</li><li>fish UI ，这个无需多言，历时两年多，工程院 react 技术栈 PC WEB 项目标配 UI 组件库</li></ul><p><a name="i0lN9"></a></p><h3 id="5、提供后台通用能力"><a href="#5、提供后台通用能力" class="headerlink" title="5、提供后台通用能力"></a>5、提供后台通用能力</h3><ul><li>提供后台常用的布局、菜单、导航、面包屑能力，菜单、面包屑通过配置化方式编写。同时这些能力可以通过 url 参数进行关闭或打开，可以方便于作为独立页面接入其他站点（例如聚合后台）</li><li>精心准备了常用的开发模式：各种表单表格（单页、多页、行内、卡片）、富文本、图表 等等</li><li>提供了通用的组件，包括：通用请求loading、异常处理、403、404、500 处理 等等</li></ul><p><a name="Vhqtw"></a></p><h3 id="6、满足个性化需求"><a href="#6、满足个性化需求" class="headerlink" title="6、满足个性化需求"></a>6、满足个性化需求</h3><ul><li>构建能力自定义能力，你可以自定义 webpack 相关能力，例如 plugins、loaders 等等</li><li>页面、组件的自定义能力，对于页面、组件只需要满足 react 技术栈即可进行开发</li></ul><p><a name="bZ09D"></a></p><h3 id="7、符合工程院-UE-设计规范"><a href="#7、符合工程院-UE-设计规范" class="headerlink" title="7、符合工程院 UE 设计规范"></a>7、符合工程院 UE 设计规范</h3><p>和 UEDC 团队配合，遵循 UE 对应规范</p><p><a name="SBprF"></a></p><h2 id="选型判断"><a href="#选型判断" class="headerlink" title="选型判断"></a>选型判断</h2><p>如果你需要开发一个后台管理系统，存在以下的需求：</p><ul><li>希望具有通用的后台能力，例如：布局、菜单、面包屑 等能力</li><li>希望后台能够快速接入工程院基础能力：UC、RBAC、CS 等</li><li>希望后台可以被聚合后台 或其他前台项目快速接入复用</li><li>希望后台具有较强的自定义能力，例如：主体内容个性化展示</li></ul><p><a name="VdfhR"></a></p><h2 id="相关截图"><a href="#相关截图" class="headerlink" title="相关截图"></a>相关截图</h2><p>后台：<br /><img src="https://cdn.nlark.com/yuque/0/2019/png/85699/1561702419785-e1a2b3a5-756e-4ac5-9399-98361ef35997.png#align=left&display=inline&height=834&name=image.png&originHeight=1668&originWidth=2872&size=394994&status=done&style=none&width=1436" alt="image.png"></p><p>接入聚合后台：<br /><img src="https://cdn.nlark.com/yuque/0/2019/png/85699/1561702630343-0f83a10e-3fe5-446b-8827-6c9fdb4b375f.png#align=left&display=inline&height=795&name=image.png&originHeight=1590&originWidth=2876&size=378880&status=done&style=none&width=1438" alt="image.png"><br><a name="EEKwz"></a></p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;h1 id=&quot;fish-pro-是什么&quot;&gt;&lt;a href=&quot;#fish-pro-是什么&quot; class=&quot;headerlink&quot; title=&quot;fish pro 是什么&quot;&gt;&lt;/a&gt;fish pro 是什么&lt;/h1&gt;&lt;p&gt;fish pro 是一套基于 react 的 &lt;strong
       
     
     </summary>
@@ -40,8 +40,8 @@
   
   <entry>
     <title>前言</title>
-    <link href="https://github.com/ND-EdTech-Team/github.io/2020/07/16/%E5%89%8D%E8%A8%80/"/>
-    <id>https://github.com/ND-EdTech-Team/github.io/2020/07/16/%E5%89%8D%E8%A8%80/</id>
+    <link href="https://github.com/ND-EdTech-Team/blogs/2020/07/16/%E5%89%8D%E8%A8%80/"/>
+    <id>https://github.com/ND-EdTech-Team/blogs/2020/07/16/%E5%89%8D%E8%A8%80/</id>
     <published>2020-07-16T10:46:59.000Z</published>
     <updated>2020-07-16T10:52:21.854Z</updated>
     

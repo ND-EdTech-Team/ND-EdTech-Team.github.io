@@ -22,28 +22,39 @@
     var CONFIG = {"hostname":"github.com","root":"/blogs/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AE">
-<meta property="og:url" content="https://github.com/ND-EdTech-Team/blogs/index.html">
+  <meta name="description" content="王杰光 网龙开发者团队 6月23日  1. 组件化开发的背景移动端的开发随着功能需求的增加，移动端的业务也越来越复杂。同时，为了支撑公司快速地尝试各种机会，已经开发的功能的复用也越来越成为非常重要的事情。为了公司适应业务模式，我们的移动端开发在2015年开始组件化的改造。 从架构演进的来看，移动端的开发也是从单体模式往组件化发展。 单体的痛点是代码高度耦合、无法大团队共同开发，维护成本高昂，也无">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端组件化开发实践">
+<meta property="og:url" content="https://github.com/ND-EdTech-Team/blogs/2020/07/17/mobile-component-develop/index.html">
 <meta property="og:site_name" content="AE">
+<meta property="og:description" content="王杰光 网龙开发者团队 6月23日  1. 组件化开发的背景移动端的开发随着功能需求的增加，移动端的业务也越来越复杂。同时，为了支撑公司快速地尝试各种机会，已经开发的功能的复用也越来越成为非常重要的事情。为了公司适应业务模式，我们的移动端开发在2015年开始组件化的改造。 从架构演进的来看，移动端的开发也是从单体模式往组件化发展。 单体的痛点是代码高度耦合、无法大团队共同开发，维护成本高昂，也无">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/blogs/2020/07/17/mobile-component-develop/01.png">
+<meta property="og:image" content="https://github.com/blogs/2020/07/17/mobile-component-develop/00.png">
+<meta property="og:image" content="https://github.com/blogs/2020/07/17/mobile-component-develop/02.png">
+<meta property="og:image" content="https://github.com/blogs/2020/07/17/mobile-component-develop/03.png">
+<meta property="og:image" content="https://github.com/blogs/2020/07/17/mobile-component-develop/root.png">
+<meta property="article:published_time" content="2020-07-17T04:46:31.000Z">
+<meta property="article:modified_time" content="2020-07-17T06:38:41.519Z">
 <meta property="article:author" content="ND">
+<meta property="article:tag" content="组件化">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/blogs/2020/07/17/mobile-component-develop/01.png">
 
-<link rel="canonical" href="https://github.com/ND-EdTech-Team/blogs/">
+<link rel="canonical" href="https://github.com/ND-EdTech-Team/blogs/2020/07/17/mobile-component-develop/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>AE</title>
+  <title>移动端组件化开发实践 | AE</title>
   
 
 
@@ -134,7 +145,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,6 +157,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-组件化开发的背景"><span class="nav-number">1.</span> <span class="nav-text">1. 组件化开发的背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-组件化开发"><span class="nav-number">2.</span> <span class="nav-text">2. 组件化开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-概念模型"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 概念模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-组件的声明"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 组件的声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-主要议题"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 主要议题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-页面跳转"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1 页面跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-事件绑定"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 事件绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-跨组件数据访问"><span class="nav-number">2.3.3.</span> <span class="nav-text">2.3.3 跨组件数据访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4-组件的注册发现"><span class="nav-number">2.3.4.</span> <span class="nav-text">2.3.4 组件的注册发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-5-组件的生命周期"><span class="nav-number">2.3.5.</span> <span class="nav-text">2.3.5 组件的生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4、混合组件开发"><span class="nav-number">2.4.</span> <span class="nav-text">2.4、混合组件开发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发流程和工具支持"><span class="nav-number">3.</span> <span class="nav-text">开发流程和工具支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-组件的开发、测试、发布流程"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 组件的开发、测试、发布流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-应用的配置、发布流程"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 应用的配置、发布流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件化治理"><span class="nav-number">4.</span> <span class="nav-text">组件化治理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-包名-类名规范"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 包名&#x2F;类名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-资源规范"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 资源规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-第三方依赖库规范"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 第三方依赖库规范</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -193,9 +205,10 @@
       <div class="main-inner">
         
 
-        <div class="content index posts-expand">
+        <div class="content post posts-expand">
           
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -211,10 +224,9 @@
       <meta itemprop="name" content="AE">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blogs/2020/07/17/mobile-component-develop/" class="post-title-link" itemprop="url">移动端组件化开发实践</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          移动端组件化开发实践
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -238,7 +250,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
+        <blockquote>
 <p>王杰光 网龙开发者团队 6月23日</p>
 </blockquote>
 <h1 id="1-组件化开发的背景"><a href="#1-组件化开发的背景" class="headerlink" title="1. 组件化开发的背景"></a>1. 组件化开发的背景</h1><p>移动端的开发随着功能需求的增加，移动端的业务也越来越复杂。同时，为了支撑公司快速地尝试各种机会，已经开发的功能的复用也越来越成为非常重要的事情。为了公司适应业务模式，我们的移动端开发在2015年开始组件化的改造。</p>
@@ -313,185 +325,33 @@
 <p>本文介绍了网龙在移动端组件化开发方面整体的技术方案和思路，整个方案涉及到的流程比较长，面也比较广，很多方面只是点到为止，希望可以给大家带来一些启发。其中涉及到的一些课题或者技术细节，在以后的分享中有机会再展开。</p>
 <p>（作者： 资深软件开发工程师  王杰光）</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/blogs/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/" rel="tag"># 组件化</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ND-EdTech-Team/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blogs/images/avatar.gif">
-      <meta itemprop="name" content="ND">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">fish-pro简介</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-16 19:56:11" itemprop="dateCreated datePublished" datetime="2020-07-16T19:56:11+08:00">2020-07-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-17 14:12:25" itemprop="dateModified" datetime="2020-07-17T14:12:25+08:00">2020-07-17</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="fish-pro-是什么"><a href="#fish-pro-是什么" class="headerlink" title="fish pro 是什么"></a>fish pro 是什么</h1><p>fish pro 是一套基于 react 的 <strong>通用后台管理最佳实践</strong>，为工程院提供一套管理后台快速开发能力，可以通过：<a href="http://fish-design-pro-test.k8s.sdp.nd/#/demo/crud/modal" target="_blank" rel="noopener">http://fish-design-pro-test.k8s.sdp.nd/</a> 进行预览。</p>
-<p><a name="uJe4M"></a></p>
-<h2 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h2><p><a name="ArtqG"></a></p>
-<h3 id="1、快速创建后台项目的能力"><a href="#1、快速创建后台项目的能力" class="headerlink" title="1、快速创建后台项目的能力"></a>1、快速创建后台项目的能力</h3><p>通过 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 命令行（<a href="http://githoniel.gitee.io/toolkit-doc/#/zh-cn/api/gmc/readme" target="_blank" rel="noopener">@gem-mine/cli</a>）直接创建，未来还可以通过可视化界面进行。依托于 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 还能够进行项目的版本检测与自动化升级，也就是说 fish pro 在不断发展的同时，你会及时收到其什么时候发布了版本，更新的内容，并且可以自动化升级。</p>
-<p><a name="A9PBZ"></a></p>
-<h3 id="2、成熟、高效的项目构建能力"><a href="#2、成熟、高效的项目构建能力" class="headerlink" title="2、成熟、高效的项目构建能力"></a>2、成熟、高效的项目构建能力</h3><p>基于 <a href="http://githoniel.gitee.io/toolkit-doc/#/" target="_blank" rel="noopener">toolkit</a> 的构建能力（<a href="http://githoniel.gitee.io/toolkit-doc/#/zh-cn/api/gms/readme" target="_blank" rel="noopener">@gem-mine/script</a>），当然还支持进行自定义处理。例如你可以添加 plugin、loader 以及任何你想自定义 webpack 的能力。</p>
-<p><a name="aF8uG"></a></p>
-<h3 id="3、健壮的-react-基础能力"><a href="#3、健壮的-react-基础能力" class="headerlink" title="3、健壮的 react 基础能力"></a>3、健壮的 react 基础能力</h3><p>集成了 react 中非常常用的两个能力</p>
-<ul>
-<li>数据流管理（<a href="https://www.yuque.com/gem-mine/util/durex-overview" target="_blank" rel="noopener">@gem-mine/durex</a>），基于redux 但比 redux 好用太多</li>
-<li>路由管理（<a href="https://www.yuque.com/gem-mine/util/router-overview" target="_blank" rel="noopener">@gem-mine/durex-router</a>），配置型路由管理，包括了权限配置、路由拆包按需等能力</li>
-</ul>
-<p><a name="aTztv"></a></p>
-<h3 id="4、方便、实用的工具库、UI-库"><a href="#4、方便、实用的工具库、UI-库" class="headerlink" title="4、方便、实用的工具库、UI 库"></a>4、方便、实用的工具库、UI 库</h3><ul>
-<li>请求库（<a href="https://www.yuque.com/gem-mine/util/request-overview" target="_blank" rel="noopener">@gem-mine/request</a>），支持多域、多环境请求能力，通过切面定制通用异常、loading 处理。同时 fish pro 在此基础上适配 WAF 跨域能力</li>
-<li>不可变数据（<a href="https://www.yuque.com/gem-mine/util/immutable-overview" target="_blank" rel="noopener">@gem-mine/immutable</a>），小而可爱的 immutable 工具，提升性能的同时也提升了编码体验</li>
-<li>国际化能力（<a href="https://www.yuque.com/gem-mine/util/intl-overview" target="_blank" rel="noopener">@gem-mine/intl</a>），简单有效的多语言能力，支持本地、远程模式</li>
-<li>工程院 SDK 集合（<a href="https://www.yuque.com/gem-mine/util/one-overview" target="_blank" rel="noopener">@sdp.nd/one</a>），包装好了 one，可以快速接入工程院的 uc、oms、rbac 等能力</li>
-<li>fish UI ，这个无需多言，历时两年多，工程院 react 技术栈 PC WEB 项目标配 UI 组件库</li>
-</ul>
-<p><a name="i0lN9"></a></p>
-<h3 id="5、提供后台通用能力"><a href="#5、提供后台通用能力" class="headerlink" title="5、提供后台通用能力"></a>5、提供后台通用能力</h3><ul>
-<li>提供后台常用的布局、菜单、导航、面包屑能力，菜单、面包屑通过配置化方式编写。同时这些能力可以通过 url 参数进行关闭或打开，可以方便于作为独立页面接入其他站点（例如聚合后台）</li>
-<li>精心准备了常用的开发模式：各种表单表格（单页、多页、行内、卡片）、富文本、图表 等等</li>
-<li>提供了通用的组件，包括：通用请求loading、异常处理、403、404、500 处理 等等</li>
-</ul>
-<p><a name="Vhqtw"></a></p>
-<h3 id="6、满足个性化需求"><a href="#6、满足个性化需求" class="headerlink" title="6、满足个性化需求"></a>6、满足个性化需求</h3><ul>
-<li>构建能力自定义能力，你可以自定义 webpack 相关能力，例如 plugins、loaders 等等</li>
-<li>页面、组件的自定义能力，对于页面、组件只需要满足 react 技术栈即可进行开发</li>
-</ul>
-<p><a name="bZ09D"></a></p>
-<h3 id="7、符合工程院-UE-设计规范"><a href="#7、符合工程院-UE-设计规范" class="headerlink" title="7、符合工程院 UE 设计规范"></a>7、符合工程院 UE 设计规范</h3><p>和 UEDC 团队配合，遵循 UE 对应规范</p>
-<p><a name="SBprF"></a></p>
-<h2 id="选型判断"><a href="#选型判断" class="headerlink" title="选型判断"></a>选型判断</h2><p>如果你需要开发一个后台管理系统，存在以下的需求：</p>
-<ul>
-<li>希望具有通用的后台能力，例如：布局、菜单、面包屑 等能力</li>
-<li>希望后台能够快速接入工程院基础能力：UC、RBAC、CS 等</li>
-<li>希望后台可以被聚合后台 或其他前台项目快速接入复用</li>
-<li>希望后台具有较强的自定义能力，例如：主体内容个性化展示</li>
-</ul>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blogs/2020/07/16/fish-pro%E7%AE%80%E4%BB%8B/" rel="prev" title="fish-pro简介">
+      <i class="fa fa-chevron-left"></i> fish-pro简介
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ND-EdTech-Team/blogs/2020/07/16/%E5%89%8D%E8%A8%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blogs/images/avatar.gif">
-      <meta itemprop="name" content="ND">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blogs/2020/07/16/%E5%89%8D%E8%A8%80/" class="post-title-link" itemprop="url">前言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-07-16 18:46:59 / 修改时间：18:52:21" itemprop="dateCreated datePublished" datetime="2020-07-16T18:46:59+08:00">2020-07-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>  网龙华渔教育开发者团队，致力于通过互联网技术探索教育的本源和未来趋势，以教育愿景为驱动力，立足于基础科学、创新性技术和应用技术。我们用强大的技术能力，构建开放的教育生态系统和专注于教育领域的网络社区。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 

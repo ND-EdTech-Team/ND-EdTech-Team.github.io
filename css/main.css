@@ -2452,7 +2452,7 @@ ul.breadcrumb li + li:last-child {
 .custom-logo-image {
   background: #fff;
   margin: 0 auto 10px;
-  max-width: 150px;
+  max-width: 120px;
   padding: 5px;
 }
 .brand {
@@ -2584,7 +2584,7 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2aadab;
+  background: #ff3cff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

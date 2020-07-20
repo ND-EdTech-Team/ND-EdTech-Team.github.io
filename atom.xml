@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>AE</title>
   
-  <subtitle>工程院技术博客</subtitle>
+  <subtitle>网龙教育开发者技术博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nd-edtech-team.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://nd-edtech-team.github.io/</id>
   
   <author>
-    <name>ND</name>
+    <name>网龙教育开发者团队</name>
     
   </author>
   
